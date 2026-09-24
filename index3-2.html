@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма 3.2</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Контейнер формы -->
+    <div class="container" id="form">
+        <h1>Добро пожаловать</h1>
+        <p>Заполните анкету, чтобы зарегистрироваться</p>
+        <form>
+            <div class="form-element">
+                <label for="surname">Фамилия</label>
+                <input 
+                    type="text" 
+                    name="surname" 
+                    placeholder="Иванов"
+                    pattern="[A-Za-zА-Яа-яЁё]{2,}"
+                    required
+                >
+            </div>
+            <div class="form-element">
+                <label for="name">Имя</label>
+                <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Иван"
+                    pattern="[A-Za-zА-Яа-яЁё]{2,}"
+                    required
+                >
+            </div>
+            <div class="form-element">
+                <label for="patronymic">Отчество (при наличии)</label>
+                <input 
+                    type="text" 
+                    name="patronymic" 
+                    placeholder="Иванович"
+                    pattern="[A-Za-zА-Яа-яЁё]{2,}"
+                >
+            </div>
+            <div class="small-container">
+                <div class="form-element">
+                    <label for="birth-day">Дата рождения</label>
+                    <input 
+                        type="date" 
+                        id="birth-day"
+                        name="birth-day"
+                        placeholder="01.01.1999"
+                        required
+                    >
+                </div>
+                <div class="form-element">
+                    <label for="gender">Пол</label>
+                    <div class="gender-selection">
+                        <div>
+                            <input 
+                                type="radio" 
+                                name="gender" 
+                                id="male"
+                                value="male"
+                            >
+                            <label for="male">Мужской</label>
+                        </div>
+                        <div>
+                            <input 
+                                type="radio"
+                                name="gender" 
+                                id="woman"
+                                value="female"
+                            >
+                            <label for="woman">Женский</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="birth-error" class="error-message"></div>
+            <div class="form-element">
+                <label for="tel-number">Номер телефона</label>
+
+                <!-- +7(999)000-00-00 или 89990000000 -->
+                <input 
+                    type="tel" 
+                    name="tel-number" 
+                    pattern="(\+7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}" 
+                    placeholder="+7(ХХХ)-ХХХ-ХХ-ХХ"
+                    required
+                >
+            </div>
+
+            <div class="form-element">
+                <label for="email">Электронная почта</label>
+
+                <!-- pochta@ddd.com -->
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="name@company.com"
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                    required
+                >
+            </div>
+            <div class="small-container">
+                <div class="form-element">
+                    <label for="password">Придумайте пароль</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password"
+                        placeholder="Пароль"
+                        required
+                    >
+                </div>
+                <div class="form-element">
+                    <label for="pass-verific">Повторите пароль</label>
+                    <input 
+                        type="password" 
+                        id="pass-verific" 
+                        name="pass-verific"
+                        placeholder="Повтор пароля"
+                        required
+                    >
+                </div>
+            </div>
+            <div id="pass-error" class="error-message"></div>
+            <div class="button-container">
+                <button type="submit" class="send-button">Отправить</button>
+                <button type="reset" class="clear-button">Очистить</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
